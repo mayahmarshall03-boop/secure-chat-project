@@ -10,6 +10,7 @@ cur.execute("""CREATE TABLE users (
     user_id INTEGER PRIMARY KEY AUTOINCREMENT, 
     username TEXT UNIQUE NOT NULL, 
     password_hash TEXT NOT NULL, 
+    salt TEXT NOT NULL,
     public_key TEXT NOT NULL, 
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP )""")
 conn.commit();
