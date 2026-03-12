@@ -28,4 +28,11 @@ Mariyah Marshall Senior Project
 - Fixed VS Code interpreter issues by pointing it to the correct virtual environment path.
 - Confirmed that Flask imports and linting warnings were resolved.
 
-**Week 5**
+**Week 5 - Backend Setup & Initial Authentication Work**
+- Completed backend environment setup and successfully launched the Flask server
+- Connected to the SQLite database and confirmed the users table was created and accessible.
+- Began implementing the authentication system, including initial route setup for registration and login.
+- Tested server responses and resolved early issues related to routing, JSON handling, and environment configuration.
+- Prepared the backend for full authentication logic to be completed in Week 6.
+
+**Week 6 - **
