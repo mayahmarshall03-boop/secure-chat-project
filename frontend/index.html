@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Chat App</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL: USERS LIST -->
+    <div class="users-panel">
+        <h2>Users</h2>
+        <div id="usersList" class="scroll-users"></div>
+    </div>
+
+    <!-- CENTER PANEL: CHAT WINDOW -->
+    <div class="chat-panel">
+        <h2>Messages</h2>
+        <div id="messagesContainer" class="messages-box"></div>
+
+        <input id="messageInput" placeholder="Type message">
+        <button onclick="sendMessage()">Send</button>
+        <div id="messageStatus" style="margin-top: 5px; font-size: 14px;"></div>
+
+    </div>
+
+    <!-- RIGHT PANEL: LOGIN + REGISTER + CHAT CONTEXT -->
+    <div class="side-panel">
+
+        <!-- AUTH PANEL (will hide after login) -->
+        <div id="authPanel">
+
+        <!-- REGISTER SECTION -->
+        <h2>Register</h2>
+        <input id="regUsername" placeholder="Username">
+        <input id="regPassword" placeholder="Password" type="password">
+        <button id="registerBtn">Register</button>
+
+        <!-- LOGIN SECTION -->
+        <h2>Login</h2>
+        <input id="loginUsername" placeholder="Username">
+        <input id="loginPassword" placeholder="Password" type="password">
+        <button id="loginBtn">Login</button>
+        <div id="loginStatus"></div>
+
+        </div> <!-- END AUTH PANEL -->
+
+        <!-- CHAT CONTEXT -->
+        <h2>Select User to Chat With</h2>
+        <input id="myId" placeholder="My User ID">
+        <input id="otherId" placeholder="Other User ID">
+        <input id="otherPubKey" type="hidden">
+        
+
+        <button onclick="fetchMessages()">Fetch Messages</button>
+    </div>
+
+</div> <!-- END CONTAINER -->
+
+<script>
+document.addEventListener("loginSuccess", () => {
+    document.getElementById("loginStatus").textContent = "Login successful!";
+});
+</script>
+
+<script src="scripts/crypto.js"></script>
+<script src="scripts/auth.js"></script>
+<script src="scripts/chat.js"></script>
+<script src="scripts/encryption.js"></script>
+<script src="scripts/decryption.js"></script>
+<script src="scripts/app.js"></script>
+
+</body>
+</html>
