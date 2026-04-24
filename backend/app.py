@@ -28,7 +28,7 @@ app.register_blueprint(auth_bp)
 app.register_blueprint(messages_bp)
 app.register_blueprint(users_bp)
 
-@app.route("https://secure-chat-project.onrender.com/test", methods=["GET", "OPTIONS"])
+@app.route("/test", methods=["GET", "OPTIONS"])
 def test():
     return {"message": "CORS test"}
 
