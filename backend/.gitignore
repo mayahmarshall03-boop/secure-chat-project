@@ -1,0 +1,25 @@
+# Environment variables
+.env
+.env.*
+
+# SQLite database
+*.db
+*.sqlite
+*.sqlite3
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Logs
+*.log
+
+# Instance folder (Flask)
+instance/
+
+keys/user_keys/
+*.pem
+
+__pycache__/
+*.pyc
