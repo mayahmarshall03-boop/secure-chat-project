@@ -13,7 +13,7 @@ from keys.key_utils import generate_keypair, save_private_key, public_key_to_pem
 auth_bp = Blueprint('auth', __name__) #registers authication routes unter the auth blueprint so app.py can attach them
 
 # REGISTER
-@auth_bp.route('/register', methods=['POST'])
+@auth_bp.route('https://secure-chat-project.onrender.com/register', methods=['POST'])
 @cross_origin() # Enables CORS so the frontend and backend can talk to each other
 
 def register():
@@ -52,7 +52,7 @@ def register():
 
 
 # LOGIN
-@auth_bp.route('/login', methods=['POST'])
+@auth_bp.route('https://secure-chat-project.onrender.com/login', methods=['POST'])
 @cross_origin()
 def login():
     data = request.get_json()
@@ -95,7 +95,7 @@ def login():
 
 
 # PUBLIC KEY LOOKUP
-@auth_bp.route('/users/<username>/public_key', methods=['GET'])
+@auth_bp.route('https://secure-chat-project.onrender.com/users/<username>/public_key', methods=['GET'])
 @cross_origin()
 def get_public_key(username):
     row = UserModel.get_user_by_username(db, username)

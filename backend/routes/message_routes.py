@@ -8,7 +8,7 @@ import json
 messages_bp = Blueprint('messages', __name__)
 
 # SEND MESSAGE
-@messages_bp.route('/messages/send', methods=['POST'])
+@messages_bp.route('https://secure-chat-project.onrender.com/messages/send', methods=['POST'])
 @cross_origin() # Enables CORS so the frontend and backend can talk to each other
 def send_message():
     data = request.get_json()
@@ -62,7 +62,7 @@ def send_message():
     return jsonify({"message": "Message sent successfully"}), 201
 
 # GET MESSAGE
-@messages_bp.route('/messages/get', methods=['GET'])
+@messages_bp.route('https://secure-chat-project.onrender.com/messages/get', methods=['GET'])
 @cross_origin()
 def get_messages():
     # Pulls the user_id from the URL (e.g., /messages/get?user_id=3)
@@ -89,7 +89,7 @@ def get_messages():
     #return the list as JSON
     return jsonify({"messages": messages}), 200 
 
-@messages_bp.route('/messages/conversation', methods=['GET'])
+@messages_bp.route('https://secure-chat-project.onrender.com/messages/conversation', methods=['GET'])
 @cross_origin()
 def get_conversation():
     user1 = request.args.get("user1")

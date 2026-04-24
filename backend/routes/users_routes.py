@@ -3,7 +3,7 @@ from database import get_db  # SQLite connection helper
 
 users_bp = Blueprint("users", __name__)
 
-@users_bp.route("/users", methods=["GET"])
+@users_bp.route("https://secure-chat-project.onrender.com/users", methods=["GET"])
 def get_users():
     conn = get_db()
     cursor = conn.execute("SELECT user_id, username, public_key FROM users")
